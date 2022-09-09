@@ -1,0 +1,16 @@
+.gradle
+local.properties
+.idea
+!/.idea/codeStyles
+!/.idea/inspectionProfiles
+*.iml
+*.so
+.DS_Store
+build
+captures
+env
+node_modules
+reports
+.cxx
+out/
+*/**/.gitignore

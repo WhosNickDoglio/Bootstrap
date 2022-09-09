@@ -1,0 +1,77 @@
+[versions]
+agp = "7.2.2"
+kotlin = "1.7.10"
+dagger = "2.43.2"
+detekt = "1.21.0"
+coroutines = "1.6.4"
+okhttp = "4.10.0"
+retrofit = "2.9.0"
+moshi = "1.13.0"
+sqldelight = "1.5.3"
+workflow = "1.7.1"
+compose = "1.2.1"
+composeCompiler = "1.3.0"
+jacoco = "0.8.7"
+
+[plugins]
+detekt = { id = "io.gitlab.arturbosch.detekt", version.ref = "detekt" }
+gradle-versions = { id = "com.github.ben-manes.versions", version = "0.42.0" }
+doctor = { id = "com.osacky.doctor", version = "0.8.1" }
+anvil = { id = "com.squareup.anvil", version = "2.4.2" }
+ksp = { id = "com.google.devtools.ksp", version = "1.7.10-1.0.6" }
+play-publish = { id = "com.github.triplet.play", version = "3.7.0" }
+junit-jacoco = { id = "com.vanniktech.android.junit.jacoco", version = "0.16.0" }
+dependency-analysis = { id = "com.autonomousapps.dependency-analysis", version = "1.13.1" }
+android-library = { id = "com.android.library", version.ref = "agp" }
+android-app = { id = "com.android.application", version.ref = "agp" }
+kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
+kotlin-kapt = { id = "org.jetbrains.kotlin.kapt", version.ref = "kotlin" }
+
+[libraries]
+gradle-android = { module = "com.android.tools.build:gradle", version.ref = "agp" }
+gradle-sqldelight = { module = "com.squareup.sqldelight:gradle-plugin", version.ref = "sqldelight" }
+gradle-kotlin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlin" }
+gradle-detekt = { module = "io.gitlab.arturbosch.detekt:detekt-gradle-plugin", version.ref = "detekt" }
+
+
+dagger-core = { module = "com.google.dagger:dagger", version.ref = "dagger" }
+dagger-compiler = { module = "com.google.dagger:dagger-compiler", version.ref = "dagger" }
+
+timber = { module = "com.jakewharton.timber:timber", version = "5.0.1" }
+
+detekt-formatting = { module = "io.gitlab.arturbosch.detekt:detekt-formatting", version.ref = "detekt" }
+
+coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "coroutines" }
+coroutines-android = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-android", version.ref = "coroutines" }
+
+okhttp-core = { module = "com.squareup.okhttp3:okhttp", version.ref = "okhttp" }
+okhttp-logging = { module = "com.squareup.okhttp3:logging-interceptor", version.ref = "okhttp" }
+
+retrofit-core = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit" }
+retrofit-converter-moshi = { module = "com.squareup.retrofit2:converter-moshi", version.ref = "retrofit" }
+
+moshi-core = { module = "com.squareup.moshi:moshi", version.ref = "moshi" }
+moshi-codegen = { module = "com.squareup.moshi:moshi-kotlin-codegen", version.ref = "moshi" }
+moshi-adapters = { module = "com.squareup.moshi:moshi-adapters", version.ref = "moshi" }
+
+eithernet = { module = "com.slack.eithernet:eithernet", version = "1.2.1" }
+
+
+junit = { module = "junit:junit", version = "4.13.2" }
+truth = { module = "com.google.truth:truth", version = "1.1.3" }
+
+leakcanary = { module = "com.squareup.leakcanary:leakcanary-android", version = "2.9.1" }
+desugar = { module = "com.android.tools:desugar_jdk_libs", version = "1.1.6" }
+
+
+compose-ui = { module = "androidx.compose.ui:ui", version.ref = "compose" }
+compose-ui-tooling = { module = "androidx.compose.ui:ui-tooling", version.ref = "compose" }
+compose-ui-tooling-preview = { module = "androidx.compose.ui:ui-tooling-preview", version.ref = "compose" }
+compose-foundation = { module = "androidx.compose.foundation:foundation", version.ref = "compose" }
+compose-animations = { module = "androidx.compose.animation:animation", version.ref = "compose" }
+compose-compiler = { module = "androidx.compose.compiler:compiler", version.ref = "composeCompiler" }
+compose-material = { module = "androidx.compose.material:material", version.ref = "compose" }
+compose-material-icons-core = { module = "androidx.compose.material:material-icons-core", version.ref = "compose" }
+compose-material-icons-extended = { module = "androidx.compose.material:material-icons-extended", version.ref = "compose" }
+
