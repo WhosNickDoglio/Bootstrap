@@ -44,9 +44,14 @@ gradlePlugin {
 dependencies {
     detektPlugins(libs.detekt.formatting)
 
+    // TODO figure out how to best do this
     compileOnly(gradleApi())
-    compileOnly(libs.gradleAndroidCacheFix)
+    implementation(libs.gradleAndroidCacheFix)
     compileOnly(libs.gradle.kotlin)
-    compileOnly(libs.gradle.android)
     compileOnly(libs.gradle.detekt)
+    api(libs.gradle.android)
+
+    testImplementation(libs.junit)
+    testImplementation(libs.truth)
+    testImplementation(libs.truth.testkit)
 }

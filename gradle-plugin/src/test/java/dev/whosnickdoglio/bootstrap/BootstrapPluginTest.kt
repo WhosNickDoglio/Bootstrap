@@ -24,24 +24,29 @@
 
 package dev.whosnickdoglio.bootstrap
 
-import org.gradle.api.Plugin
-import org.gradle.api.Project
+import com.google.common.truth.Truth.assertThat
+import org.gradle.testfixtures.ProjectBuilder
+import org.junit.Test
 
-class BootstrapPlugin : Plugin<Project> {
+class BootstrapPluginTest {
 
-    override fun apply(target: Project) {
-        // val extension = target.extensions.create("bootstrap", BootstrapExtension::class.java)
+    @Test
+    fun `android app module has cache fix plugin applied`() {
+        val project = ProjectBuilder.builder().build()
 
-        target.applyAndroidCacheFixToAndroidModules()
+        project.pluginManager.apply("dev.whosnickdoglio.bootstrap")
+        project.pluginManager.apply("com.android.application")
+
+        assertThat(project.pluginManager.hasPlugin("org.gradle.android.cache-fix")).isTrue()
     }
 
-    private fun Project.applyAndroidCacheFixToAndroidModules() {
-        pluginManager.withPlugin("com.android.application") {
-            plugins.apply("org.gradle.android.cache-fix")
-        }
+    @Test
+    fun `android library module has cache fix plugin applied`() {
+        val project = ProjectBuilder.builder().build()
 
-        pluginManager.withPlugin("com.android.library") {
-            plugins.apply("org.gradle.android.cache-fix")
-        }
+        project.pluginManager.apply("dev.whosnickdoglio.bootstrap")
+        project.pluginManager.apply("com.android.library")
+
+        assertThat(project.pluginManager.hasPlugin("org.gradle.android.cache-fix")).isTrue()
     }
 }
