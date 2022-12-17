@@ -45,6 +45,10 @@ tasks.jacocoTestReport {
     dependsOn(tasks.test) // tests are required to run before generating the report
 }
 
+tasks.withType<ValidatePlugins>().configureEach {
+    failOnWarning.set(true)
+    enableStricterValidation.set(true)
+}
 
 
 group = "dev.whosnickdoglio"
