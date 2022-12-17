@@ -24,18 +24,29 @@
 
 package dev.whosnickdoglio.bootstrap
 
-import dev.whosnickdoglio.bootstrap.BootstrapExtension.Companion.createBootstrap
-import org.gradle.api.Plugin
+import dev.whosnickdoglio.bootstrap.detekt.DetektHandler
+import dev.whosnickdoglio.bootstrap.detekt.configureDetekt
+import org.gradle.api.Action
 import org.gradle.api.Project
+import org.gradle.api.model.ObjectFactory
+import javax.inject.Inject
 
-class BootstrapPlugin : Plugin<Project> {
+/**
+ * A Gradle plugin extension for the [BootstrapPlugin] that allows for
+ * configuration.
+ */
+open class BootstrapExtension @Inject constructor(private val project: Project, objects: ObjectFactory) {
 
-    override fun apply(target: Project) {
-        @Suppress("UnusedPrivateMember")
-        val extension = target.createBootstrap()
+    internal val detekt: DetektHandler = objects.newInstance(DetektHandler::class.java)
 
-        target.pluginManager.withPlugin("com.android.base") {
-            target.plugins.apply("org.gradle.android.cache-fix")
-        }
+    /** A detekt function that allows for configuration of Detekt. */
+    fun detekt(action: Action<DetektHandler>? = null) {
+        action?.execute(detekt)
+        project.configureDetekt(detekt)
+    }
+
+    internal companion object {
+        internal fun Project.createBootstrap(): BootstrapExtension =
+            extensions.create("bootstrap", BootstrapExtension::class.java)
     }
 }

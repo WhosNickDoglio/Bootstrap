@@ -22,20 +22,41 @@
  *   SOFTWARE.
  */
 
-package dev.whosnickdoglio.bootstrap
+package dev.whosnickdoglio.bootstrap.detekt
 
-import dev.whosnickdoglio.bootstrap.BootstrapExtension.Companion.createBootstrap
-import org.gradle.api.Plugin
 import org.gradle.api.Project
+import org.gradle.api.model.ObjectFactory
+import org.gradle.api.provider.Property
+import javax.inject.Inject
 
-class BootstrapPlugin : Plugin<Project> {
+/** Handler for configuring detekt. */
+open class DetektHandler @Inject constructor(objects: ObjectFactory) {
 
-    override fun apply(target: Project) {
-        @Suppress("UnusedPrivateMember")
-        val extension = target.createBootstrap()
+    internal val isFormattingEnabled: Property<Boolean> = objects.property(Boolean::class.java).convention(true)
 
-        target.pluginManager.withPlugin("com.android.base") {
-            target.plugins.apply("org.gradle.android.cache-fix")
-        }
+    internal val version: Property<String> = objects.property(String::class.java).convention(DEFAULT_DETEKT_VERSION)
+
+    fun enableDetektFormatting(isEnabled: Boolean) {
+        this.isFormattingEnabled.set(isEnabled)
+        this.isFormattingEnabled.disallowChanges()
+    }
+
+    fun version(version: String) {
+        this.version.set(version)
+        this.version.disallowChanges()
+    }
+
+    internal companion object {
+        internal const val DEFAULT_DETEKT_VERSION = "1.22.0"
+    }
+}
+
+internal fun Project.configureDetekt(detekt: DetektHandler) {
+    project.plugins.apply("io.gitlab.arturbosch.detekt")
+    if (detekt.isFormattingEnabled.get()) {
+        project.dependencies.add(
+            "detektPlugins",
+            "io.gitlab.arturbosch.detekt:detekt-formatting:${detekt.version.get()}"
+        )
     }
 }
