@@ -28,7 +28,7 @@ jobs:
         uses: gradle/gradle-build-action@v2.3.3
 
       - name: Build 
-        run: ./gradlew build
+        run: ./gradlew gradle-plugin:assemble
 
       - name: Lint
         run: ./gradlew detekt
