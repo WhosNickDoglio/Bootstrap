@@ -2,6 +2,7 @@
 
 [![CI](https://github.com/WhosNickDoglio/Bootstrap/actions/workflows/ci.yml/badge.svg)](https://github.com/WhosNickDoglio/Bootstrap/actions/workflows/ci.yml)
 [![codecov](https://codecov.io/gh/WhosNickDoglio/Bootstrap/branch/trunk/graph/badge.svg?token=J4JG5WPuUH)](https://codecov.io/gh/WhosNickDoglio/Bootstrap)
+[![Maintainability](https://api.codeclimate.com/v1/badges/969559e0bae1fd8d35e6/maintainability)](https://codeclimate.com/github/WhosNickDoglio/Bootstrap/maintainability)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 An opinionated Gradle plugin for Android/JVM project setup **heavily** inspired by
