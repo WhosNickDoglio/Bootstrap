@@ -32,16 +32,8 @@ class BootstrapPlugin : Plugin<Project> {
     override fun apply(target: Project) {
         // val extension = target.extensions.create("bootstrap", BootstrapExtension::class.java)
 
-        target.applyAndroidCacheFixToAndroidModules()
-    }
-
-    private fun Project.applyAndroidCacheFixToAndroidModules() {
-        pluginManager.withPlugin("com.android.application") {
-            plugins.apply("org.gradle.android.cache-fix")
-        }
-
-        pluginManager.withPlugin("com.android.library") {
-            plugins.apply("org.gradle.android.cache-fix")
+        target.pluginManager.withPlugin("com.android.base") {
+            target.plugins.apply("org.gradle.android.cache-fix")
         }
     }
 }
