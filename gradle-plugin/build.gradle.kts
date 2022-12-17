@@ -45,6 +45,7 @@ dependencies {
     detektPlugins(libs.detekt.formatting)
 
     compileOnly(gradleApi())
+    compileOnly(libs.gradleAndroidCacheFix)
     compileOnly(libs.gradle.kotlin)
     compileOnly(libs.gradle.android)
     compileOnly(libs.gradle.detekt)
