@@ -27,7 +27,25 @@ plugins {
     alias(libs.plugins.detekt)
     alias(libs.plugins.bestPractices)
     id("java-gradle-plugin")
+    jacoco
 }
+
+jacoco {
+    version = libs.versions.jacoco.get()
+}
+
+
+tasks.test {
+    finalizedBy(tasks.jacocoTestReport) // report is always generated after tests run
+}
+tasks.jacocoTestReport {
+    reports {
+        xml.required.set(true)
+    }
+    dependsOn(tasks.test) // tests are required to run before generating the report
+}
+
+
 
 group = "dev.whosnickdoglio"
 version = "1.0-SNAPSHOT"

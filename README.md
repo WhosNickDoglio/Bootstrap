@@ -1,6 +1,7 @@
 # Boostrap Gradle Plugin
 
 [![CI](https://github.com/WhosNickDoglio/Bootstrap/actions/workflows/ci.yml/badge.svg)](https://github.com/WhosNickDoglio/Bootstrap/actions/workflows/ci.yml)
+[![codecov](https://codecov.io/gh/WhosNickDoglio/Bootstrap/branch/trunk/graph/badge.svg?token=J4JG5WPuUH)](https://codecov.io/gh/WhosNickDoglio/Bootstrap)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 An opinionated Gradle plugin for Android/JVM project setup **heavily** inspired by

@@ -2,7 +2,7 @@
 agp = "7.3.1"
 kotlin = "1.7.22"
 detekt = "1.22.0"
-jacoco = "0.8.7"
+jacoco = "0.8.8"
 
 [plugins]
 detekt = { id = "io.gitlab.arturbosch.detekt", version.ref = "detekt" }
