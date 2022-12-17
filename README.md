@@ -1,5 +1,6 @@
 # Boostrap Gradle Plugin
 
+[![CI](https://github.com/WhosNickDoglio/Bootstrap/actions/workflows/ci.yml/badge.svg)](https://github.com/WhosNickDoglio/Bootstrap/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 An opinionated Gradle plugin for Android/JVM project setup **heavily** inspired by
