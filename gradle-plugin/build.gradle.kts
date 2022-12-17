@@ -26,7 +26,7 @@ plugins {
     alias(libs.plugins.kotlin.jvm)
     alias(libs.plugins.detekt)
     alias(libs.plugins.bestPractices)
-    id("java-gradle-plugin")
+    `java-gradle-plugin`
     jacoco
 }
 
