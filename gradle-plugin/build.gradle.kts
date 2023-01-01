@@ -34,6 +34,9 @@ jacoco {
     version = libs.versions.jacoco.get()
 }
 
+kotlin {
+    jvmToolchain(11)
+}
 
 tasks.test {
     finalizedBy(tasks.jacocoTestReport) // report is always generated after tests run
