@@ -72,8 +72,8 @@ dependencies {
     // TODO figure out how to best do this
     compileOnly(gradleApi())
     implementation(libs.gradleAndroidCacheFix)
-    compileOnly(libs.gradle.kotlin)
-    compileOnly(libs.gradle.detekt)
+    implementation(libs.gradle.kotlin)
+    implementation(libs.gradle.detekt)
     api(libs.gradle.android)
 
     testImplementation(libs.junit)
