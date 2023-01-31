@@ -6,7 +6,7 @@ jacoco = "0.8.8"
 
 [plugins]
 detekt = { id = "io.gitlab.arturbosch.detekt", version.ref = "detekt" }
-gradle-versions = { id = "com.github.ben-manes.versions", version = "0.44.0" }
+gradle-versions = { id = "com.github.ben-manes.versions", version = "0.45.0" }
 doctor = { id = "com.osacky.doctor", version = "0.8.1" }
 dependency-analysis = { id = "com.autonomousapps.dependency-analysis", version = "1.18.0" }
 bestPractices = { id = "com.autonomousapps.plugin-best-practices-plugin", version = "0.9" }
